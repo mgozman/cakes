@@ -1,0 +1,13 @@
+<h3>{{cakeToShow.name}}</h3>
+<img [src] = "cakeToShow.image" class = img>
+
+<!-- <div class = column>
+    <div *ngIf="cakeToShow.rating; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>{{cakeToShow.rating}} stars</ng-template>
+    <ng-template #elseBlock>No rating yet :(</ng-template>
+</div> -->
+
+<p *ngFor="let comment of cakeToShow.comments">
+    {{comment.rating}} stars: 
+    {{comment.comment}}
+</p>

@@ -1,0 +1,15 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.root {
+    display: flex;
+    flex-direction: row;
+}
+.img{
+    width: 200px;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.small_container{
+    margin: 5px;
+}

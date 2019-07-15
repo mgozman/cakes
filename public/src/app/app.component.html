@@ -1,0 +1,43 @@
+<div class = "container root">
+    <div class = container>
+        <h2>New Cake: </h2>
+        <form (submit)="onSubmit()" method = "post" class = "form-group">
+            <!-- <p> {{ cake | json }} </p> -->
+            <label>Baker name:</label>
+            <input type="text" name="name" [(ngModel)]="cake.name" class="form-control" />
+            <label>Image URL:</label>
+            <input type="text" name="image" [(ngModel)]="cake.image" class="form-control"/>
+            <input type="submit" class = "btn btn-success" value="Submit" />
+        </form>
+    
+        <div class="root">
+            <app-cake *ngIf="showCake" [cakeToShow]="showCake"></app-cake> 
+        </div>
+    </div>
+    <div class = container>
+        <h3>All cakes: ({{cakes.length}})</h3> 
+        
+        <div *ngFor="let cake of cakes">
+            <form (submit)="onSubmitRating(cake)" method = "post" class = "form-group root">
+                <div><a (click)="cakeToShow(cake)" href="javascript:void(0)"><img [src] = "cake.image" class = img></a></div>
+                <div class = "small_container column">
+                    <button (click)="onButtonClickDeletecake(cake)" class="btn btn-success">Delete Cake</button>
+                    <label>Rating:</label>
+                    <select name = "rating" [(ngModel)]="cake.rating"  value = "5">
+                        <option value = 1>1</option>
+                        <option value = 2>2</option>
+                        <option value = 3>3</option>
+                        <option value = 4>4</option>
+                        <option value = 5>5</option>
+                    </select>
+
+                    <label>Comment:</label>
+                    <input type="text" name="comment" [(ngModel)]="cake.comment" class="form-control"/>
+                    <input type="hidden" name="id" [(ngModel)]="cake._id" class="form-control"/>
+                    <input type="submit" class = "btn btn-success" value="Submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>
