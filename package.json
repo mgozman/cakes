@@ -1,0 +1,28 @@
+{
+  "name": "cakes",
+  "version": "1.0.0",
+  "description": "cakes",
+  "main": "1",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgozman/cakes.git"
+  },
+  "keywords": [
+    "cake"
+  ],
+  "author": "gozman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mgozman/cakes/issues"
+  },
+  "homepage": "https://github.com/mgozman/cakes#readme"
+}
